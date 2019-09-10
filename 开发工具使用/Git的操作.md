@@ -1,4 +1,6 @@
 
+# mac 安装Git，并配置ssh密钥对，使用ssh方式克隆远程仓库
+
 >**Windows版用户可以看我的这篇博客->[最详细的GitHub / Git 的windows配置、使用教程、常用日志汇总（小白必看！）](https://blog.csdn.net/jal517486222/article/details/79967632)**
 ## 一、下载Git并且安装
 自行去Git官网下载dmg安装包，然后进行安装
