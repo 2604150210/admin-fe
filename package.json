@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:2604150210/admin-fe.git",
   "author": "Cathy <517486222@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "3.10.0"
+  }
 }
