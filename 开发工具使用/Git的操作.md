@@ -7,6 +7,9 @@
 ## 二、在用户目录~下配置.gitconfig
 在终端输入`vim ~/.gitconfig`
 主要是配置好user中的name和email。第六行开始的alias是Git命令的别名
+
+status是查看项目的变化,diff是查看每个文件具体的变化
+
 ```sh
   [user]
       name = Cathy
@@ -25,6 +28,7 @@
 ```
 如图所示:
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190911060943499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phbDUxNzQ4NjIyMg==,size_16,color_FFFFFF,t_70)
+
 ## 三、在用户目录~下生成ssh密钥对
 `ssh-keygen -t rsa -C '517486222@qq.com'`，然后等到终端执行，不用输入，直接按回车
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190911061648271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phbDUxNzQ4NjIyMg==,size_16,color_FFFFFF,t_70)
@@ -59,3 +63,16 @@ dist
 代码上传就是老套路了,`git add .`， `git ca "your commit info"`，`git push`三步走就搞定了
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190911062742745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2phbDUxNzQ4NjIyMg==,size_16,color_FFFFFF,t_70)
 回到GitHub刷新一下就能看到刚才提交的.gitignore文件了
+
+
+
+## 八、总结代码提交过程
+
+- 从master切换到开发分支上
+- git merge origin master,拉取远程仓库最新的代码
+- git add . ,最终文件的变化
+- git commit -am"备注信息"，将代码提交到本地仓库
+- git push,本地仓库代码推送到远程仓库
+- 提交pull request,管理员审核
+- git co -b admin-v2 切换到创建的新分支admin-v2。没有-b则是直接切换分支
+- git b查看分支，星号代表当前所在分支
