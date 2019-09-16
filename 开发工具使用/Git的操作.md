@@ -76,3 +76,5 @@ dist
 - 提交pull request,管理员审核
 - git co -b admin-v2 切换到创建的新分支admin-v2。没有-b则是直接切换分支
 - git b查看分支，星号代表当前所在分支
+- 当远程还没有这个分支时，执行git push --set-upstream origin admin-v2
+- 代码写完后上GitHub找到admin-v2分支，然后点击pull request将admin-v2分支上的代码合并到master分支上。
