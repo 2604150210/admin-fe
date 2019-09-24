@@ -78,3 +78,12 @@ dist
 - git b查看分支，星号代表当前所在分支
 - 当远程还没有这个分支时，执行git push --set-upstream origin admin-v2
 - 代码写完后上GitHub找到admin-v2分支，然后点击pull request将admin-v2分支上的代码合并到master分支上。
+
+## 九、多人在测试分支test上提交代码、并且合并到master上的操作步骤
+1. `git checkout -b test`:如果本地没有test分支，则先创建test分支
+2. `git pull origin test:test` 如果远程有这个分支，则先pull
+3. `git add .`添加到待提交缓冲区
+4. `git commit -m"info..."`提交到本地仓库
+5. `git push origin test:test`, （git push <远程主机名> <本地分支名>:<远程分支名>）当远程还没有这个分支时，执行git push --set-upstream origin test
+6. 另一个人想下拉分支代码时，先切换分支到test,执行步骤1、2
+7. `git checkout test`,`git push origin test:master`,将test分支提交到master分支
