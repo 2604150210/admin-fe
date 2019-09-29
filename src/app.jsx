@@ -1,68 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-class A extends React.Component{
-	constructor(props){
-		super(props);
-	}
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
+
+import Layout from 'component/layout/index.jsx';
+// 页面 
+import Home from 'page/home/index.jsx';
+
+class App extends React.Component{
 	render(){
-		return(
+		return (
 			<div>
-				<Switch>
-					 <Route exact path={`${this.props.match.path}`}
-					 render={(route)=>{
-						return <p>当前组件是不带参数的A, 参数是{route.match.path}</p>
-					 }}/>
-					 <Route path={`${this.props.match.path}/sub`}
-					 render={(route)=>{
-						return <p>当前组件sub</p>
-					 }}/>
-					 <Route path={`${this.props.match.path}/:id`}
-					 render={(route)=>{
-						return <p>当前组件是带参数的A, 参数是{route.match.path}</p>
-					 }}/>
-				</Switch>
-			</div>
-		);
-	}
-}
-class B extends React.Component{
-	constructor(props){
-		super(props);
-	}
-	render(){
-		return(
-		<div>
-			<p>Component B</p>
-		</div>
-		);
-	}
-}
-class Wrapper extends React.Component{
-	constructor(props){
-		super(props);
-	}
-	render(){
-		return(
-			<div>
-				<Link to='/a'>组件A</Link>
-				<br/>
-				<Link to='/a/123'>带参数的组件A</Link>
-				<br/>
-				<Link to='/b'>组件B</Link>
-				<br/>
-				<Link to='/a/sub'>/a/sub</Link>
-				{this.props.children}
+				<Router>
+					<Layout>
+						<Switch>
+							<Route exact path='/' component={Home}/>
+							<Route exact path='/product' component={Home}/>
+							<Route exact path='/product-category' component={Home}/>
+							<Route exact path='/order' component={Home}/>
+							<Route exact path='/user' component={Home}/>
+						</Switch>
+					</Layout>
+				</Router>
 			</div>
 		);
 	}
 }
 ReactDOM.render(
-	<Router>
-		<Wrapper>
-			<Route path="/a" component={A}/>
-			<Route path="/b" component={B}/>
-		</Wrapper>
-	</Router>,
+	<App />,
 	document.getElementById("app")
 );
