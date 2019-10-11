@@ -84,7 +84,7 @@ class ProductList extends React.Component{
 		];
 		return (
 			<div id="page-wrapper">
-				<PageTitle title='用户列表'>
+				<PageTitle title='商品列表'>
 					<div className="page-header-right">
 						 <Link to='/product/save' className='btn btn-primary'>
 						 	<i className='fa fa-plus'></i>
